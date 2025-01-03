@@ -15,8 +15,14 @@
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 1320px;
   min-height: 100vh;
+}
+
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
 }
 
 $primary-white-color: #ffffff;
