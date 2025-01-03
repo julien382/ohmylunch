@@ -15,16 +15,17 @@
 
 body {
   margin: 0;
-  min-width: 1320px;
+  min-width: 320px; // Ajuster la largeur minimale pour mobile
   min-height: 100vh;
+  overflow-x: hidden; // Empêcher le dépassement horizontal
 }
 
 main {
   margin: 0;
+  width: 100%; // Assurer que le contenu prend toute la largeur
 
   @media (min-width: 768px) {
     margin: 0 auto;
-    width: 100%;
     max-width: 1000px;
   }
 }
