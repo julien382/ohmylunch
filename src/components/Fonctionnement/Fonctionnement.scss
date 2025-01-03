@@ -1,0 +1,62 @@
+@import '../../styles/index.scss';
+
+.fonctionnement {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: $primary-black-color;
+}
+
+.fonctionnementTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: $primary-font-size;
+    font-family: $secondary-font;
+    margin-bottom: 2rem;
+    margin-left: 100px;
+}
+
+.fonctionnementCards {
+    margin-left: 150px;
+    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: $primary-black-color;
+
+}
+
+.fonctionnementCard {
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.fonctionnementCardNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: $primary-black-color;
+    color: $primary-white-color;
+    border-radius: 50%;
+    font-size: $secondary-font-size;
+    font-family: $secondary-font;
+}
+
+.fonctionnementCard img {
+    width: 25px;
+    height: 25px;
+}
+
+.fonctionnementCard p {
+    font-size: $tertiary-font-size;
+    font-family: $secondary-font;
+    text-align: center;
+}
