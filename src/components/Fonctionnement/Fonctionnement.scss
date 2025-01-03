@@ -10,7 +10,6 @@
 .fonctionnementTitle {
     display: flex;
     flex-direction: column;
-    align-items: start;
     font-size: $primary-font-size;
     font-family: $secondary-font;
     margin-bottom: 2rem;
@@ -30,10 +29,10 @@
 .fonctionnementCard {
     display: flex;
     align-items: center;
-    background-color: $primary-color;
+    background-color: $secondary-white-color;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1); // Ajouté un box-shadow supplémentaire
     margin-bottom: 2rem;
 }
 
@@ -41,22 +40,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background-color: $primary-black-color;
     color: $primary-white-color;
     border-radius: 50%;
-    font-size: $secondary-font-size;
+    font-size: $quaternary-font-size;
     font-family: $secondary-font;
 }
 
 .fonctionnementCard img {
     width: 25px;
     height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .fonctionnementCard p {
     font-size: $tertiary-font-size;
-    font-family: $secondary-font;
     text-align: center;
+    font-weight: $primary-font-weight;
 }

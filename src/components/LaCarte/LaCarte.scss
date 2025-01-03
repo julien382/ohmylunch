@@ -1,0 +1,85 @@
+@import '../../styles/index.scss';
+
+.laCarte {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: $secondary-white-color;
+    color: $primary-black-color;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.laCarteTitle {
+    font-size: $primary-font-size;
+    font-family: $secondary-font;
+    margin-bottom: 2rem;
+    margin-left: 100px;
+}
+
+.laCarteTypePlats {
+    font-size: $secondary-font-size;
+    margin-bottom: 1rem;
+    margin-left: 100px;
+}
+
+.laCarteCards {
+    display: flex;
+    flex-direction: column; // Changer pour colonne
+    gap: 2rem;
+    align-items: center;
+}
+
+.laCarteCard {
+    display: flex;
+    flex-direction: row; // Changer pour ligne
+    background-color: $primary-white-color;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%; // Ajuster la largeur
+    max-width: 600px; // Limiter la largeur maximale
+}
+
+.laCarteCard img {
+    width: 150px; // Ajuster la taille de l'image
+    height: auto;
+    border-radius: 10px;
+}
+
+.laCarteCardContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.laCarteCardContent h4 {
+    font-size: $tertiary-font-size;
+    font-family: $secondary-font;
+    margin: 0;
+}
+
+.laCarteCardContent p {
+    font-size: $quaternary-font-size;
+    margin: 0.5rem 0;
+    text-align: left;
+}
+
+.laCarteCardFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.laCarteCardFooter img {
+    width: 20px;
+    height: 20px;
+}
+
+.laCarteCardFooter p {
+    font-size: $tertiary-font-size;
+    font-family: $secondary-font;
+    margin: 0;
+}
