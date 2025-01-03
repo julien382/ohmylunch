@@ -1,0 +1,34 @@
+@import '../../styles/index.scss';
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: $secondary-black-color;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nameLogoFooter {
+    font-size: $primary-font-size;
+    color: $primary-white-color;
+    font-family: $secondary-font;
+    margin-top: 1rem;
+}
+
+.containerHoraires, .containerAdresse {
+    margin-top: 2rem;
+}
+
+.titleHoraires, .titleAdresse {
+    font-size: $primary-font-size;
+    color: $primary-white-color;
+    font-family: $secondary-font;
+}
+
+.horaires, .adresse {
+    font-size: $tertiary-font-size;
+    color: $primary-white-color;
+}
