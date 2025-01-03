@@ -1,11 +1,10 @@
 import './Header.scss'
 
 const Header = () => {
-
     return (
-        <div className='header'>
+        <header className='header'>
             <h1 className='nameLogo'>ohmylunch</h1>
-        </div>
+        </header>
     )
 }
 

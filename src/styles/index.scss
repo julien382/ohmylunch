@@ -17,8 +17,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
 $primary-white-color: #ffffff;
@@ -29,8 +27,11 @@ $secondary-black-color: #303030;
 $primary-color: #99e2d0;
 $primary-degrade-color: linear-gradient(170deg, #ff79da, #f071da, #e06adb, #cf64dc, #bd5fdc, #a95adc, #9356dc);
 
-$primary-font-size: 24px;
-$secondary-font-size: 30px;
-$tertiary-font-size: 100px;
+$primary-font-size: 25px;
+$secondary-font-size: 20px;
+$tertiary-font-size: 18px;
+$quaternary-font-size: 15px;
 
-$secondary-font: 'Shrikhand', cursive;
+$primary-font-weight: 400;
+
+$secondary-font: 'Shrikhand', serif;
