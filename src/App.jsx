@@ -16,8 +16,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/" element={<CartPage />} />
-          <Route path="/" element={<HistoryPage />} />
+          <Route path="/Panier" element={<CartPage />} />
+          <Route path="/Histoire" element={<HistoryPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </main>

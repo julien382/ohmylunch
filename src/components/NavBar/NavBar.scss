@@ -1,0 +1,39 @@
+@import '../../styles/index.scss';
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $secondary-white-color;
+    color: $primary-black-color;
+    font-size: $tertiary-font-size;
+}
+
+.navBarTitle {
+    color: $primary-black-color;
+    font-family: $secondary-font;
+}
+
+.navBarText {
+    margin: 5px;
+}
+
+.buttonRestaurant {
+    font-family: $secondary-font;
+    color: $primary-black-color;
+    text-decoration: none;
+    border: 2px solid $primary-color;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: $secondary-white-color;
+        color: $primary-color;
+    }
+}
+
