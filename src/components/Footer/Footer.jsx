@@ -1,4 +1,8 @@
 import './Footer.scss'
+import facebookIcon from '../../assets/svg/facebook.svg';
+import instagramIcon from '../../assets/svg/instagram.svg';
+import mailIcon from '../../assets/svg/mail.svg';
+import tripadvisorIcon from '../../assets/svg/tripadvisor.svg';
 
 const Footer = () => {
 
@@ -19,6 +23,17 @@ const Footer = () => {
                 <p className='titleAdresse'>Adresse</p>
                 <p className='adresse'>528 Place du Château</p>
                 <p className='adresse'>59500 DOUAI</p>
+            </div>
+            <div className='containerContact'>
+                <img src={facebookIcon} alt="Facebook" />
+                <img src={instagramIcon} alt="Instagram" />
+                <img src={mailIcon} alt="Mail" />
+                <img src={tripadvisorIcon} alt="Tripadvisor" />
+            </div>
+            <div className='containerCopyright'>
+                <p className='copyright'>Copyright © 2025 ohmylunch</p>
+                <p className='copyright'>Site web créé par Julien Hermain</p>
+                <p className='copyright'>Mentions légales</p>
             </div>            
         </footer>
     )
