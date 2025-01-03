@@ -1,0 +1,16 @@
+@import '../../styles/index.scss';
+
+.containerCity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    color: black;
+    font-weight: $primary-font-weight;
+    font-size: $quaternary-font-size;
+    background-color: $tertiary-white-color;
+    
+    p{
+        margin-left: 8px;
+    }
+}

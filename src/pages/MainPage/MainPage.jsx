@@ -1,10 +1,11 @@
+import ContainerCity from '../../components/ContainerCity/ContainerCity'
 import './MainPage.scss'
 
 const MainPage = () => {
 
     return (
-        <div className='accueil'>
-
+        <div>
+            <ContainerCity />
         </div>
     )
 }
