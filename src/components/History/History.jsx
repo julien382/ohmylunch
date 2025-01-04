@@ -22,6 +22,17 @@ const History = () => {
                         </div>
                     </div>
 
+
+
+                    <div className='historyCard'>
+                        <img src={entree2} alt='plat' />
+                        <div className='historyCardContent'>
+                            <p>
+                                Notre équipe est une véritable symphonie de talents où chaque métier joue un rôle essentiel : en cuisine, nos chefs et commis travaillent avec passion pour créer des plats savoureux et artistiques ; en salle, nos serveurs et responsables veillent à offrir un service impeccable et attentionné ; et en coulisses, nos gestionnaires, plongeurs et autres collaborateurs contribuent à faire fonctionner l’ensemble avec fluidité. Ensemble, nous partageons une même ambition : vous offrir une expérience culinaire mémorable, où professionnalisme, convivialité et passion se rencontrent.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
         </div>
