@@ -1,6 +1,6 @@
 import './LaCarte.scss'
 
-import heart from '../../assets/svg/city.svg';
+import heart from '../../assets/svg/heart.svg';
 import plat from '../../assets/img/plat.jpg';
 import plat2 from '../../assets/img/plat2.jpg';
 import plat3 from '../../assets/img/plat3.jpg';

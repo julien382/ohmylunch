@@ -1,5 +1,7 @@
 import './Fonctionnement.scss'
-import cityIcon from '../../assets/svg/city.svg';
+import listeIcon from '../../assets/svg/liste.svg';
+import portableIcon from '../../assets/svg/portable.svg';
+import shopIcon from '../../assets/svg/shop.svg';
 
 const Fonctionnement = () => {
 
@@ -13,15 +15,15 @@ const Fonctionnement = () => {
                     <div className="fonctionnementCardNumber">
                         <span>1</span>
                     </div>
-                    <img src={cityIcon} alt="city" />
-                    <p>Choisissez un restaurant</p>
+                    <img src={listeIcon} alt="city" />
+                    <p>Composez votre menu</p>
                 </div>
 
                 <div className="fonctionnementCard">
                     <div className="fonctionnementCardNumber">
                         <span>2</span>
                     </div>
-                    <img src={cityIcon} alt="city" />
+                    <img src={portableIcon} alt="city" />
                     <p>Présenter la liste au serveur</p>
                 </div>
 
@@ -29,7 +31,7 @@ const Fonctionnement = () => {
                     <div className="fonctionnementCardNumber">
                         <span>3</span>
                     </div>
-                    <img src={cityIcon} alt="city" />
+                    <img src={shopIcon} alt="city" />
                     <p>Dégustez au restaurant</p>
                 </div>
 
