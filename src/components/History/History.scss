@@ -28,6 +28,23 @@
     align-items: center;
 }
 
+.historyCardImages {
+    display: flex;
+    flex-direction: column; // Changer pour colonne
+    background-color: $primary-white-color;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.historyCardImages img {
+    width: 100%; // Ajuster la largeur de l'image
+    height: auto; // Conserver le ratio de l'image
+    border-radius: 10px;
+}
+
 .historyCard {
     display: flex;
     flex-direction: column; // Changer pour colonne
@@ -51,9 +68,6 @@
     width: 100%;
     padding: 0.5rem;
     box-sizing: border-box; // Assurer que le padding est inclus dans la largeur
-}
-
-.historyCardContent p {
     font-size: $quaternary-font-size;
     margin: 0.5rem 0;
     text-align: left;
