@@ -6,6 +6,8 @@ import entree1 from '../../assets/img/plat.jpg';
 import entree2 from '../../assets/img/plat2.jpg';
 import entree3 from '../../assets/img/plat3.jpg';
 
+import { Link } from "react-router-dom";
+
 const LaCarte = () => {
 
     return (
@@ -47,6 +49,10 @@ const LaCarte = () => {
                     <LaCarteCard img={entree3} title={"Mousse au chocolat"} text={"Au piment d'espelette à la truffe noire"} price={"23€"}  />
                 </div>
             </div>
+
+            <Link to="/Panier" className='buttonCommander'>
+              <p>Commander</p>
+            </Link>
 
         </div>
     )
