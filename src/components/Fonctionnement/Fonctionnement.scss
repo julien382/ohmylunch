@@ -57,7 +57,6 @@
 
 .fonctionnementCard p {
     font-size: $tertiary-font-size;
-    text-align: center;
+    text-align: start;
     font-weight: $primary-font-weight;
-    margin-left: 10px; // Ajouter une marge pour éviter le chevauchement
 }
