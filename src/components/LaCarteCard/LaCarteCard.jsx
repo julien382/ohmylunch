@@ -1,6 +1,7 @@
 import './LaCarteCard.scss'
 
 import heart from '../../assets/svg/heart.svg';
+import PropTypes from 'prop-types';
 
 const LaCarteCard = ({img, title, text, price}) => {
 
@@ -20,5 +21,15 @@ const LaCarteCard = ({img, title, text, price}) => {
         </div>
     )
 }
+
+LaCarteCard.propTypes = {
+    img: PropTypes.string.isRequired,   // URL de l'image
+    title: PropTypes.string.isRequired, // Titre du plat
+    text: PropTypes.string,             // Description du plat
+    price: PropTypes.oneOfType([        // Prix peut être un nombre ou une chaîne
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
+};
 
 export default LaCarteCard

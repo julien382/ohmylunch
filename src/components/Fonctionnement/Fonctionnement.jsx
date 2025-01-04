@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './Fonctionnement.scss'
 
 const Fonctionnement = ({icon1, icon2, icon3, text1, text2, text3}) => {
@@ -38,5 +39,14 @@ const Fonctionnement = ({icon1, icon2, icon3, text1, text2, text3}) => {
         </div>
     )
 }
+
+Fonctionnement.propTypes = {
+    icon1: PropTypes.string.isRequired,
+    icon2: PropTypes.string.isRequired,
+    icon3: PropTypes.string.isRequired,
+    text1: PropTypes.string.isRequired,
+    text2: PropTypes.string.isRequired,
+    text3: PropTypes.string.isRequired,
+};
 
 export default Fonctionnement
