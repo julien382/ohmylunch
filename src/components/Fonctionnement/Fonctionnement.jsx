@@ -12,7 +12,7 @@ const Fonctionnement = ({icon1, icon2, icon3, text1, text2, text3}) => {
                     <div className="fonctionnementCardNumber">
                         <span>1</span>
                     </div>
-                    <img src={icon1} alt="city" />
+                    <img src={icon1} alt="icon1" />
                     <p>{text1}</p>
                 </div>
 
@@ -20,7 +20,7 @@ const Fonctionnement = ({icon1, icon2, icon3, text1, text2, text3}) => {
                     <div className="fonctionnementCardNumber">
                         <span>2</span>
                     </div>
-                    <img src={icon2} alt="city" />
+                    <img src={icon2} alt="icon2" />
                     <p>{text2}</p>
                 </div>
 
@@ -28,7 +28,7 @@ const Fonctionnement = ({icon1, icon2, icon3, text1, text2, text3}) => {
                     <div className="fonctionnementCardNumber">
                         <span>3</span>
                     </div>
-                    <img src={icon3} alt="city" />
+                    <img src={icon3} alt="icon3" />
                     <p>{text3}</p>
                 </div>
 
