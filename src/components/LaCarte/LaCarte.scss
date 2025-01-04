@@ -16,6 +16,11 @@
     margin-bottom: 2rem;
 }
 
+.laCarteTypePlatsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .laCarteTypePlats {
     font-size: $secondary-font-size;
     margin-bottom: 0.5rem;
