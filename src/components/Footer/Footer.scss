@@ -24,10 +24,12 @@ footer {
 .titleHoraires, .titleAdresse {
     font-size: $primary-font-size;
     font-family: $secondary-font;
+    color: $primary-white-color;
 }
 
 .horaires, .adresse {
     font-size: $tertiary-font-size;
+    color: $primary-white-color;
 }
 
 .containerContact {

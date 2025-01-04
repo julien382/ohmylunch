@@ -22,15 +22,25 @@ const Footer = () => {
                 <p className='horaires'>Dimanche : Fermé</p>
             </div>
             <div className='containerAdresse'>
-                <p className='titleAdresse'>Adresse</p>
-                <p className='adresse'>528 Place du Château</p>
-                <p className='adresse'>59500 DOUAI</p>
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <p className='titleAdresse'>Adresse</p>
+                    <p className='adresse'>528 Place du Château</p>
+                    <p className='adresse'>59500 DOUAI</p>
+                </Link>
             </div>
             <div className='containerContact'>
-                <img src={facebookIcon} alt="Facebook" />
-                <img src={instagramIcon} alt="Instagram" />
-                <img src={mailIcon} alt="Mail" />
-                <img src={tripadvisorIcon} alt="Tripadvisor" />
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <img src={facebookIcon} alt="Facebook" />
+                </Link>
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <img src={instagramIcon} alt="Instagram" />
+                </Link>
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <img src={mailIcon} alt="Mail" />
+                </Link>
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <img src={tripadvisorIcon} alt="Tripadvisor" />
+                </Link>
             </div>
             <div className='containerCopyright'>
                 <p className='copyright'>Copyright © 2025 ohmylunch</p>
