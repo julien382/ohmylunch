@@ -18,8 +18,15 @@
 
 .laCarteTypePlats {
     font-size: $secondary-font-size;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
+
+.laCarteTypePlatsBarre {
+    width: 2.5rem;
+    height: 2px;
+    background-color: $primary-color;
+    margin-bottom: 1rem;
+  }
 
 .laCarteCards {
     display: flex;

@@ -13,6 +13,8 @@ const LaCarte = () => {
 
             <h3 className='laCarteTypePlats'>ENTREES</h3>
 
+            <span className='laCarteTypePlatsBarre'></span>
+
             <div className='laCarteCards'>
                 <div className='laCarteCard'>
                     <img src={plat} alt='plat' />
