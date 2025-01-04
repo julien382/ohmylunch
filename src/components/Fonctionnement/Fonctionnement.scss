@@ -12,13 +12,9 @@
     flex-direction: column;
     font-size: $primary-font-size;
     font-family: $secondary-font;
-    margin-bottom: 2rem;
-    margin-left: 100px;
 }
 
 .fonctionnementCards {
-    margin-left: 150px;
-    margin-right: 150px;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -33,7 +29,7 @@
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.1); // Ajouté un box-shadow supplémentaire
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .fonctionnementCardNumber {
