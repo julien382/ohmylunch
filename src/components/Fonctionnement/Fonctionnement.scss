@@ -17,7 +17,7 @@
 .fonctionnementCards {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 2rem 1rem;
     color: $primary-black-color;
     padding-bottom: 0;
 
@@ -44,17 +44,20 @@
     border-radius: 50%;
     font-size: $quaternary-font-size;
     font-family: $secondary-font;
+    flex-shrink: 0; // Empêcher la réduction de la taille des cercles
 }
 
 .fonctionnementCard img {
     width: 25px;
     height: 25px;
-    margin-left: 0px;
+    margin-left: 10px;
     margin-right: 10px;
+    flex-shrink: 0;
 }
 
 .fonctionnementCard p {
     font-size: $tertiary-font-size;
     text-align: center;
     font-weight: $primary-font-weight;
+    margin-left: 10px; // Ajouter une marge pour éviter le chevauchement
 }
