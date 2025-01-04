@@ -21,6 +21,13 @@
     margin-top: 2rem;
 }
 
+.historyCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
 .historyCard {
     display: flex;
     flex-direction: column; // Changer pour colonne
@@ -30,7 +37,6 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width: 100%; // Prendre toute la largeur de la page
     margin-bottom: 1rem; // Ajouter une marge en bas pour espacer les cartes
-    box-sizing: border-box; // Assurer que le padding est inclus dans la largeur
 }
 
 .historyCard img {

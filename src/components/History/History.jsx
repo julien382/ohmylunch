@@ -11,14 +11,17 @@ const History = () => {
                 <h3 className='historyText'>NOTRE RESTAURANT</h3>
                 <span className='laCarteTypePlatsBarre'></span>
 
-                <div className='historyCard'>
-                    <img src={entree1} alt='plat' />
-                    <div className='historyCardContent'>
-                        <p>
-                            Plongez dans un univers où la passion culinaire rencontre un service chaleureux et une ambiance conviviale. Notre restaurant est une ode aux saveurs authentiques et aux moments de partage.
-                            Chaque plat raconte une histoire. Nous sélectionnons avec soin des ingrédients frais, locaux et de saison pour vous offrir une cuisine qui ravit les papilles et l’esprit. Que vous soyez amateur de [type de cuisine, ex. cuisine française raffinée, spécialités méditerranéennes, ou burgers gourmands], notre carte variée saura combler vos envies.
-                        </p>
+                <div className='historyCards'>
+                    <div className='historyCard'>
+                        <img src={entree1} alt='plat' />
+                        <div className='historyCardContent'>
+                            <p>
+                                Plongez dans un univers où la passion culinaire rencontre un service chaleureux et une ambiance conviviale. Notre restaurant est une ode aux saveurs authentiques et aux moments de partage.
+                                Chaque plat raconte une histoire. Nous sélectionnons avec soin des ingrédients frais, locaux et de saison pour vous offrir une cuisine qui ravit les papilles et l’esprit. Que vous soyez amateur de [type de cuisine, ex. cuisine française raffinée, spécialités méditerranéennes, ou burgers gourmands], notre carte variée saura combler vos envies.
+                            </p>
+                        </div>
                     </div>
+
                 </div>
 
         </div>
