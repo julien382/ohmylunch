@@ -20,3 +20,36 @@
     margin-bottom: 0.5rem;
     margin-top: 2rem;
 }
+
+.historyCard {
+    display: flex;
+    flex-direction: column; // Changer pour colonne
+    background-color: $primary-white-color;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 100%; // Prendre toute la largeur de la page
+    margin-bottom: 1rem; // Ajouter une marge en bas pour espacer les cartes
+    box-sizing: border-box; // Assurer que le padding est inclus dans la largeur
+}
+
+.historyCard img {
+    width: 100%; // Ajuster la largeur de l'image
+    height: auto; // Conserver le ratio de l'image
+    border-radius: 10px;
+}
+
+.historyCardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box; // Assurer que le padding est inclus dans la largeur
+}
+
+.historyCardContent p {
+    font-size: $quaternary-font-size;
+    margin: 0.5rem 0;
+    text-align: left;
+}
