@@ -13,7 +13,6 @@
 .laCarteTitle {
     font-size: $primary-font-size;
     font-family: $secondary-font;
-    margin-bottom: 2rem;
 }
 
 .laCarteTypePlatsContainer {
@@ -24,6 +23,7 @@
 .laCarteTypePlats {
     font-size: $secondary-font-size;
     margin-bottom: 0.5rem;
+    margin-top: 2rem; // Ajouter une marge en haut
 }
 
 .laCarteTypePlatsBarre {
