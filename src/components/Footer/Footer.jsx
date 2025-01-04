@@ -4,6 +4,8 @@ import instagramIcon from '../../assets/svg/instagram.svg';
 import mailIcon from '../../assets/svg/mail.svg';
 import tripadvisorIcon from '../../assets/svg/tripadvisor.svg';
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
 
     return (
@@ -32,7 +34,9 @@ const Footer = () => {
             </div>
             <div className='containerCopyright'>
                 <p className='copyright'>Copyright © 2025 ohmylunch</p>
-                <p className='copyright'>Site web créé par Julien Hermain</p>
+                <Link to="https://www.linkedin.com/in/julien-hermain/">
+                    <p className='copyright'>Site web créé par Julien Hermain</p>
+                </Link>
                 <p className='copyright'>Mentions légales</p>
             </div>            
         </footer>
