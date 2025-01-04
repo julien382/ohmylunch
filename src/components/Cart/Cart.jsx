@@ -5,6 +5,7 @@ import entree1 from '../../assets/img/plat.jpg';
 import entree2 from '../../assets/img/plat2.jpg';
 
 const Cart = () => {
+
     return (
         <div className='cart'>
                 <h2 className='cartTitle'>Panier</h2>
