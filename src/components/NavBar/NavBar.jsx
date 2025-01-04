@@ -8,7 +8,7 @@ const NavBar = () => {
         <div className='navBar'>
             <p className='navBarTitle'>Réservez le menu qui vous convient</p>
             <p className='navBarText'>Faciliter la commande avec votre liste d’envie</p>
-            <Link to="/Panier" className='buttonRestaurant'>
+            <Link to="/Histoire" className='buttonRestaurant'>
               <p>Le restaurant</p>
             </Link>
         </div>
