@@ -13,10 +13,12 @@ const LaCarte = () => {
     const loadImages = async () => {
       const imageImports = {};
 
-      // Charger les images dynamiquement et les stocker dans l'état
-      for (let card of data) {
-        const imgPath = `../../assets/img/${card.img}.jpg`;
-        imageImports[card.img] = (await import(`${imgPath}`)).default;
+      // Charger les images dynamiquement pour chaque catégorie
+      for (let category in data) {
+        for (let card of data[category]) {
+          const imgPath = `../../assets/img/${card.img}.jpg`;
+          imageImports[card.img] = (await import(`${imgPath}`)).default;
+        }
       }
 
       setImages(imageImports);
@@ -29,12 +31,13 @@ const LaCarte = () => {
     <div className='laCarte'>
       <h2 className='laCarteTitle'>La Carte</h2>
 
+      {/* Section Entrées */}
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>ENTREES</h3>
         <span className='laCarteTypePlatsBarre'></span>
 
         <div className='laCarteCards'>
-          {data.map((card, index) => (
+          {data.entrees.map((card, index) => (
             <LaCarteCard
               key={index}
               img={images[card.img]}  // Utiliser l'image chargée dynamiquement
@@ -46,25 +49,39 @@ const LaCarte = () => {
         </div>
       </div>
 
+      {/* Section Plats */}
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>PLATS</h3>
         <span className='laCarteTypePlatsBarre'></span>
 
         <div className='laCarteCards'>
-          <LaCarteCard img={images['plat']} title={"Filet de boeuf aux herbes"} text={"Accompagné de sa ribambelle de légumes"} price={"40€"} />
-          <LaCarteCard img={images['plat2']} title={"Parmentier de queue de boeuf"} text={"À la truffe noir sur sa purée de panais"} price={"35€"}  />
-          <LaCarteCard img={images['plat3']} title={"Filet du Turbot"} text={"Aux agrumes"} price={"44€"}  />
+          {data.plats.map((card, index) => (
+            <LaCarteCard
+              key={index}
+              img={images[card.img]}  // Utiliser l'image chargée dynamiquement
+              title={card.title}
+              text={card.text}
+              price={card.price}
+            />
+          ))}
         </div>
       </div>
 
+      {/* Section Desserts */}
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>DESSERTS</h3>
         <span className='laCarteTypePlatsBarre'></span>
 
         <div className='laCarteCards'>
-          <LaCarteCard img={images['plat']} title={"Paris-Brest"} text={"Revisité"} price={"18€"} />
-          <LaCarteCard img={images['plat2']} title={"Macaron au chocolat d'exception"} text={"Et glace à la vanille de Madagascar"} price={"22€"}  />
-          <LaCarteCard img={images['plat3']} title={"Mousse au chocolat"} text={"Au piment d'espelette à la truffe noire"} price={"23€"}  />
+          {data.desserts.map((card, index) => (
+            <LaCarteCard
+              key={index}
+              img={images[card.img]}  // Utiliser l'image chargée dynamiquement
+              title={card.title}
+              text={card.text}
+              price={card.price}
+            />
+          ))}
         </div>
       </div>
 
