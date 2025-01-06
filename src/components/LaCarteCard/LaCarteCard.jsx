@@ -1,19 +1,13 @@
-import './LaCarteCard.scss'
+import './LaCarteCard.scss';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+
 import imageDirect1 from '../../assets/img/plat1.jpg';
 
 const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) => {
-    const [favorite, setFavorite] = useState(isFavorite);
-
-    useEffect(() => {
-        setFavorite(isFavorite);
-    }, [isFavorite]);
-
-    const toggleFavorite = () => {
-        setFavorite(!favorite);
+    const toggleFavorite = (e) => {
+        e.stopPropagation(); // Empêcher la propagation du clic
         // Appeler la fonction pour ajouter ou supprimer du panier
-        onToggleFavorite({ title, text, price, img });  
+        onToggleFavorite({ title, text, price, img });
     };
 
     return (
@@ -26,7 +20,7 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) 
                 </div>
                 <div className='laCarteCardFooter'>
                     <svg
-                        className={`heartIcon ${favorite ? 'filled' : ''}`}
+                        className={`heartIcon ${isFavorite ? 'filled' : ''}`} // Utilisation de la prop isFavorite
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -41,19 +35,16 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) 
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 LaCarteCard.propTypes = {
-    img: PropTypes.string.isRequired,   // URL de l'image
-    title: PropTypes.string.isRequired, // Titre du plat
-    text: PropTypes.string,             // Description du plat
-    price: PropTypes.oneOfType([        // Prix peut être un nombre ou une chaîne
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
-    onToggleFavorite: PropTypes.func.isRequired,  // Fonction pour ajouter au panier
-    isFavorite: PropTypes.bool.isRequired,        // État favori initial
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    onToggleFavorite: PropTypes.func.isRequired,
+    isFavorite: PropTypes.bool.isRequired, // Prop pour l'état favori
 };
 
 export default LaCarteCard;
