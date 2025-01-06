@@ -1,0 +1,20 @@
+[
+  {
+    "img": "plat",
+    "title": "Fricassé d'escargot",
+    "text": "Au piment d'espelette",
+    "price": "25€"
+  },
+  {
+    "img": "plat2",
+    "title": "Foie gras de canard mi-cuit",
+    "text": "Et ses copeaux de truffe noire",
+    "price": "35€"
+  },
+  {
+    "img": "plat3",
+    "title": "Oeuf au plat",
+    "text": "Assaisonné à la truffe sur le lit de caviar",
+    "price": "20€"
+  }
+]
