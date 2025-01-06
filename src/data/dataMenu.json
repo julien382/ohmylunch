@@ -1,7 +1,7 @@
 {
   "entrees": [
     {
-      "img": "plat",
+      "img": "plat1",
       "title": "Fricassé d'escargot",
       "text": "Au piment d'espelette",
       "price": "25€"
@@ -21,7 +21,7 @@
   ],
   "plats": [
     {
-      "img": "plat",
+      "img": "plat1",
       "title": "Filet de boeuf aux herbes",
       "text": "Accompagné de sa ribambelle de légumes",
       "price": "40€"
@@ -39,7 +39,7 @@
       "price": "44€"
     },
     {
-      "img": "plat",
+      "img": "plat4",
       "title": "Magret de canard rôti",
       "text": "Accompagné de pommes de terre fondantes et sauce au vin rouge",
       "price": "48€"
@@ -47,7 +47,7 @@
   ],
   "desserts": [
     {
-      "img": "plat",
+      "img": "plat1",
       "title": "Paris-Brest",
       "text": "Revisité",
       "price": "18€"
@@ -65,13 +65,13 @@
       "price": "23€"
     },
     {
-      "img": "plat",
+      "img": "plat4",
       "title": "Tarte au citron meringuée",
       "text": "Avec une touche de basilic frais",
       "price": "19€"
     },
     {
-      "img": "plat2",
+      "img": "plat5",
       "title": "Soufflé au Grand Marnier",
       "text": "Servi avec une crème anglaise maison",
       "price": "25€"
