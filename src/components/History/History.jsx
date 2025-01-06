@@ -1,6 +1,6 @@
 import './History.scss'
 
-import entree1 from '../../assets/img/plat.jpg';
+import entree1 from '../../assets/img/plat1.jpg';
 import entree2 from '../../assets/img/plat2.jpg';
 import entree3 from '../../assets/img/plat3.jpg';
 
