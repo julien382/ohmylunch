@@ -7,13 +7,15 @@ import { Link } from "react-router-dom";
 const LaCarte = () => {
   const [panier, setPanier] = useState([]);  // Stocke les éléments du panier
 
-  // Fonction pour ajouter un élément au panier
-  const ajouterAuPanier = (card) => {
+  // Fonction pour ajouter ou supprimer un élément du panier
+  const togglePanier = (card) => {
     setPanier((prevPanier) => {
-      if (!prevPanier.find(item => item.title === card.title)) {
+      const itemIndex = prevPanier.findIndex(item => item.title === card.title);
+      if (itemIndex === -1) {
         return [...prevPanier, card];  // Ajouter l'élément si pas déjà dans le panier
+      } else {
+        return prevPanier.filter(item => item.title !== card.title);  // Supprimer l'élément du panier
       }
-      return prevPanier;  // Ne rien faire si l'élément est déjà dans le panier
     });
   };
 
@@ -41,7 +43,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
-                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
           })}
@@ -62,7 +64,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
-                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
           })}
@@ -83,7 +85,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
-                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
           })}

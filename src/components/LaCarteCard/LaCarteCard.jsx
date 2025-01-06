@@ -8,13 +8,10 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
 
     const toggleFavorite = () => {
         setIsFavorite(!isFavorite);
-        // Appeler la fonction pour ajouter au panier
+        // Appeler la fonction pour ajouter ou supprimer du panier
         onToggleFavorite({ title, text, price, img });  
     };
-//console.log(img);
-    //const urlImage = `../../assets/img/plat1.jpg`;
-   // console.log(urlImage);
-    
+
     return (
         <div className='laCarteCard'>
             <img src={imageDirect1} alt={title} className='laCarteCardImage' />
