@@ -12,6 +12,9 @@
     flex-direction: column;
     font-size: $primary-font-size;
     font-family: $secondary-font;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInTitle 0.8s ease-out forwards;
 }
 
 .fonctionnementCards {
@@ -59,4 +62,11 @@
     font-size: $tertiary-font-size;
     text-align: start;
     font-weight: $primary-font-weight;
+}
+
+.fonctionnementCard {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.6s ease-out forwards;
+    animation-delay: calc(var(--index) * 0.1s);
 }

@@ -17,10 +17,15 @@
 .navBarTitle {
     color: $primary-black-color;
     font-family: $secondary-font;
+    animation: fadeInDown 1s ease-out;
 }
 
 .navBarText {
     margin: 5px;
+    animation: fadeInDown 1s ease-out;
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 
 .buttonRestaurant {
@@ -33,9 +38,12 @@
     transition: background-color 0.3s, color 0.3s;
     margin-top: 10px;
     background-color: $primary-color;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: bounceIn 1.2s ease-out;
 
     &:hover {
         background-color: $secondary-white-color;
         color: $primary-color;
+        transform: scale(1.03);
     }
 }
