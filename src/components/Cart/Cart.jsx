@@ -1,13 +1,29 @@
-// Cart.js
 import './Cart.scss';
 import { useLocation } from 'react-router-dom';
 import LaCarteCard from '../LaCarteCard/LaCarteCard';
+import { useState, useEffect } from 'react';
 
 const Cart = () => {
   const location = useLocation();
-  const panier = location.state?.panier || JSON.parse(localStorage.getItem('panier')) || [];  // Récupérer les données du localStorage
+  const [panier, setPanier] = useState(location.state?.panier || JSON.parse(localStorage.getItem('panier')) || []);
 
-  console.log('Panier dans Cart:', panier);  // Affichage du panier pour le débogage
+  // Fonction pour ajouter ou supprimer un élément du panier
+  const togglePanier = (card) => {
+    setPanier((prevPanier) => {
+      const itemIndex = prevPanier.findIndex(item => item.title === card.title);
+      if (itemIndex === -1) {
+        return [...prevPanier, card];  // Ajouter l'élément si pas déjà dans le panier
+      } else {
+        return prevPanier.filter(item => item.title !== card.title);  // Supprimer l'élément du panier
+      }
+    });
+  };
+
+  // Log du panier dans le localStorage pour déboguer
+  useEffect(() => {
+    console.log('Panier:', panier);  // Log du panier actuel
+    localStorage.setItem('panier', JSON.stringify(panier));  // Sauvegarder le panier dans localStorage
+  }, [panier]);
 
   if (panier.length === 0) {
     return (
@@ -31,6 +47,8 @@ const Cart = () => {
             title={item.title}
             text={item.text}
             price={item.price}
+            isFavorite={true}  // Toujours en favori dans le panier
+            onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
           />
         ))}
       </div>

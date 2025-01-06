@@ -1,13 +1,17 @@
 import './LaCarteCard.scss'
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import imageDirect1 from '../../assets/img/plat1.jpg';
 
-const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
-    const [isFavorite, setIsFavorite] = useState(false);
+const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) => {
+    const [favorite, setFavorite] = useState(isFavorite);
+
+    useEffect(() => {
+        setFavorite(isFavorite);
+    }, [isFavorite]);
 
     const toggleFavorite = () => {
-        setIsFavorite(!isFavorite);
+        setFavorite(!favorite);
         // Appeler la fonction pour ajouter ou supprimer du panier
         onToggleFavorite({ title, text, price, img });  
     };
@@ -22,7 +26,7 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
                 </div>
                 <div className='laCarteCardFooter'>
                     <svg
-                        className={`heartIcon ${isFavorite ? 'filled' : ''}`}
+                        className={`heartIcon ${favorite ? 'filled' : ''}`}
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -49,6 +53,7 @@ LaCarteCard.propTypes = {
         PropTypes.number,
     ]).isRequired,
     onToggleFavorite: PropTypes.func.isRequired,  // Fonction pour ajouter au panier
+    isFavorite: PropTypes.bool.isRequired,        // État favori initial
 };
 
 export default LaCarteCard;

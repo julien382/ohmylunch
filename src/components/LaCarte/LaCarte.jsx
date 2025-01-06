@@ -35,7 +35,7 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.entrees.map((card, index) => {
-            console.log(`Carte Entrée: ${index}, Titre: ${card.title}, Titre: ${card.img}`);  // Log de l'index et titre de la carte entrée
+            const isFavorite = panier.some(item => item.title === card.title);
             return (
               <LaCarteCard
                 key={index}
@@ -43,6 +43,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
+                isFavorite={isFavorite}
                 onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
@@ -56,7 +57,7 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.plats.map((card, index) => {
-            console.log(`Carte Plat: ${index}, Titre: ${card.title}`);  // Log de l'index et titre de la carte plat
+            const isFavorite = panier.some(item => item.title === card.title);
             return (
               <LaCarteCard
                 key={index}
@@ -64,6 +65,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
+                isFavorite={isFavorite}
                 onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
@@ -77,7 +79,7 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.desserts.map((card, index) => {
-            console.log(`Carte Dessert: ${index}, Titre: ${card.title}`);  // Log de l'index et titre de la carte dessert
+            const isFavorite = panier.some(item => item.title === card.title);
             return (
               <LaCarteCard
                 key={index}
@@ -85,6 +87,7 @@ const LaCarte = () => {
                 title={card.title}
                 text={card.text}
                 price={card.price}
+                isFavorite={isFavorite}
                 onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
               />
             );
