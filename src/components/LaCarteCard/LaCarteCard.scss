@@ -43,15 +43,25 @@
     align-items: end;
 }
 
+.heartIcon {
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    fill: transparent;  // Par défaut, le cœur est vide
+    stroke: $secondary-black-color;        // Cœur bordé en rouge
+    stroke-width: 2;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.heartIcon.filled {
+    stroke: $primary-color;
+    fill: $primary-color;  // Le cœur devient rempli et rouge
+}
+
 .laCarteCardFooter p {
     font-size: $tertiary-font-size;
     font-family: $secondary-font;
     margin: 0;
-}
-
-.heartIcon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition: fill 0.3s;
 }
