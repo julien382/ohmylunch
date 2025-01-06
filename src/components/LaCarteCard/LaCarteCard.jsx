@@ -1,6 +1,7 @@
 import './LaCarteCard.scss'
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import imageDirect1 from '../../assets/img/plat1.jpg';
 
 const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
     const [isFavorite, setIsFavorite] = useState(false);
@@ -10,11 +11,13 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
         // Appeler la fonction pour ajouter au panier
         onToggleFavorite({ title, text, price, img });  
     };
-console.log(img);
-
+//console.log(img);
+    //const urlImage = `../../assets/img/plat1.jpg`;
+   // console.log(urlImage);
+    
     return (
         <div className='laCarteCard'>
-            <img src={img} alt={title} className='laCarteCardImage' />
+            <img src={imageDirect1} alt={title} className='laCarteCardImage' />
             <div className='laCarteCardContent'>
                 <div className='laCarteCardText'>
                     <h4>{title}</h4>

@@ -1,4 +1,3 @@
-// LaCarte.js
 import './LaCarte.scss';
 import LaCarteCard from '../LaCarteCard/LaCarteCard';
 import data from '../../data/dataMenu.json';  // Données JSON pour les plats
@@ -20,7 +19,7 @@ const LaCarte = () => {
 
   // Log du panier dans le localStorage pour déboguer
   useEffect(() => {
-    console.log('Panier:', panier);
+    console.log('Panier:', panier);  // Log du panier actuel
     localStorage.setItem('panier', JSON.stringify(panier));  // Sauvegarder le panier dans localStorage
   }, [panier]);
 
@@ -33,16 +32,19 @@ const LaCarte = () => {
         <h3 className='laCarteTypePlats'>ENTREES</h3>
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
-          {data.entrees.map((card, index) => (
-            <LaCarteCard
-              key={index}
-              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
-              title={card.title}
-              text={card.text}
-              price={card.price}
-              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
-            />
-          ))}
+          {data.entrees.map((card, index) => {
+            console.log(`Carte Entrée: ${index}, Titre: ${card.title}, Titre: ${card.img}`);  // Log de l'index et titre de la carte entrée
+            return (
+              <LaCarteCard
+                key={index}
+                img={card.img}  // Utiliser le chemin relatif de l'image
+                title={card.title}
+                text={card.text}
+                price={card.price}
+                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -51,16 +53,19 @@ const LaCarte = () => {
         <h3 className='laCarteTypePlats'>PLATS</h3>
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
-          {data.plats.map((card, index) => (
-            <LaCarteCard
-              key={index}
-              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
-              title={card.title}
-              text={card.text}
-              price={card.price}
-              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
-            />
-          ))}
+          {data.plats.map((card, index) => {
+            console.log(`Carte Plat: ${index}, Titre: ${card.title}`);  // Log de l'index et titre de la carte plat
+            return (
+              <LaCarteCard
+                key={index}
+                img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
+                title={card.title}
+                text={card.text}
+                price={card.price}
+                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+              />
+            );
+          })}
         </div>
       </div>
 
@@ -69,16 +74,19 @@ const LaCarte = () => {
         <h3 className='laCarteTypePlats'>DESSERTS</h3>
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
-          {data.desserts.map((card, index) => (
-            <LaCarteCard
-              key={index}
-              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
-              title={card.title}
-              text={card.text}
-              price={card.price}
-              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
-            />
-          ))}
+          {data.desserts.map((card, index) => {
+            console.log(`Carte Dessert: ${index}, Titre: ${card.title}`);  // Log de l'index et titre de la carte dessert
+            return (
+              <LaCarteCard
+                key={index}
+                img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
+                title={card.title}
+                text={card.text}
+                price={card.price}
+                onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
+              />
+            );
+          })}
         </div>
       </div>
 
