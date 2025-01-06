@@ -2,16 +2,19 @@ import './LaCarteCard.scss'
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const LaCarteCard = ({img, title, text, price}) => {
+const LaCarteCard = ({ img, title, text, price, onToggleFavorite }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
     const toggleFavorite = () => {
         setIsFavorite(!isFavorite);
+        // Appeler la fonction pour ajouter au panier
+        onToggleFavorite({ title, text, price, img });  
     };
+console.log(img);
 
     return (
         <div className='laCarteCard'>
-            <img src={img} alt='plat' className='laCarteCardImage' />
+            <img src={img} alt={title} className='laCarteCardImage' />
             <div className='laCarteCardContent'>
                 <div className='laCarteCardText'>
                     <h4>{title}</h4>
@@ -45,6 +48,7 @@ LaCarteCard.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]).isRequired,
+    onToggleFavorite: PropTypes.func.isRequired,  // Fonction pour ajouter au panier
 };
 
 export default LaCarteCard;

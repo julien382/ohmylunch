@@ -1,31 +1,28 @@
+// LaCarte.js
 import './LaCarte.scss';
 import LaCarteCard from '../LaCarteCard/LaCarteCard';
-import data from '../../data/dataMenu.json'; // Importer les données JSON
+import data from '../../data/dataMenu.json';  // Données JSON pour les plats
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const LaCarte = () => {
-  // Créer un état pour stocker les chemins d'images résolus
-  const [images, setImages] = useState({});
+  const [panier, setPanier] = useState([]);  // Stocke les éléments du panier
 
-  // Utiliser useEffect pour importer les images au chargement du composant
-  useEffect(() => {
-    const loadImages = async () => {
-      const imageImports = {};
-
-      // Charger les images dynamiquement pour chaque catégorie
-      for (let category in data) {
-        for (let card of data[category]) {
-          const imgPath = `../../assets/img/${card.img}.jpg`;
-          imageImports[card.img] = (await import(`${imgPath}`)).default;
-        }
+  // Fonction pour ajouter un élément au panier
+  const ajouterAuPanier = (card) => {
+    setPanier((prevPanier) => {
+      if (!prevPanier.find(item => item.title === card.title)) {
+        return [...prevPanier, card];  // Ajouter l'élément si pas déjà dans le panier
       }
+      return prevPanier;  // Ne rien faire si l'élément est déjà dans le panier
+    });
+  };
 
-      setImages(imageImports);
-    };
-
-    loadImages();
-  }, []); // Ce useEffect ne s'exécute qu'une seule fois, au montage du composant
+  // Log du panier dans le localStorage pour déboguer
+  useEffect(() => {
+    console.log('Panier:', panier);
+    localStorage.setItem('panier', JSON.stringify(panier));  // Sauvegarder le panier dans localStorage
+  }, [panier]);
 
   return (
     <div className='laCarte'>
@@ -35,15 +32,15 @@ const LaCarte = () => {
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>ENTREES</h3>
         <span className='laCarteTypePlatsBarre'></span>
-
         <div className='laCarteCards'>
           {data.entrees.map((card, index) => (
             <LaCarteCard
               key={index}
-              img={images[card.img]}  // Utiliser l'image chargée dynamiquement
+              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
               title={card.title}
               text={card.text}
               price={card.price}
+              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
             />
           ))}
         </div>
@@ -53,15 +50,15 @@ const LaCarte = () => {
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>PLATS</h3>
         <span className='laCarteTypePlatsBarre'></span>
-
         <div className='laCarteCards'>
           {data.plats.map((card, index) => (
             <LaCarteCard
               key={index}
-              img={images[card.img]}  // Utiliser l'image chargée dynamiquement
+              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
               title={card.title}
               text={card.text}
               price={card.price}
+              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
             />
           ))}
         </div>
@@ -71,25 +68,32 @@ const LaCarte = () => {
       <div className='laCarteTypePlatsContainer'>
         <h3 className='laCarteTypePlats'>DESSERTS</h3>
         <span className='laCarteTypePlatsBarre'></span>
-
         <div className='laCarteCards'>
           {data.desserts.map((card, index) => (
             <LaCarteCard
               key={index}
-              img={images[card.img]}  // Utiliser l'image chargée dynamiquement
+              img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
               title={card.title}
               text={card.text}
               price={card.price}
+              onToggleFavorite={ajouterAuPanier}  // Passer la fonction pour ajouter au panier
             />
           ))}
         </div>
       </div>
 
-      <Link to="/Panier" className='buttonCommander'>
+      {/* Lien vers la page Panier */}
+      <Link 
+        to={{
+          pathname: "/panier",
+          state: { panier },  // Passer le panier à la page Panier
+        }} 
+        className='buttonCommander'
+      >
         <p>Commander</p>
       </Link>
     </div>
   );
-}
+};
 
 export default LaCarte;
