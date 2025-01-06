@@ -43,11 +43,6 @@
     align-items: end;
 }
 
-.laCarteCardFooter img {
-    width: 20px;
-    height: 20px;
-}
-
 .laCarteCardFooter p {
     font-size: $tertiary-font-size;
     font-family: $secondary-font;
@@ -55,6 +50,8 @@
 }
 
 .heartIcon {
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     transition: fill 0.3s;
 }
