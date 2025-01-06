@@ -1,20 +1,32 @@
 import './LaCarteCard.scss'
 
 import heart from '../../assets/svg/heart.svg';
+import filledHeart from '../../assets/svg/heartFull.svg';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const LaCarteCard = ({img, title, text, price}) => {
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    const toggleFavorite = () => {
+        setIsFavorite(!isFavorite);
+    };
 
     return (
         <div className='laCarteCard'>
-            <img src={img} alt='plat' />
+            <img src={img} alt='plat' className='laCarteCardImage' />
             <div className='laCarteCardContent'>
                 <div className='laCarteCardText'>
                     <h4>{title}</h4>
                     <p>{text}</p>
                 </div>
                 <div className='laCarteCardFooter'>
-                    <img src={heart} alt="heart" />
+                    <img 
+                        src={isFavorite ? filledHeart : heart} 
+                        alt="heart" 
+                        onClick={toggleFavorite} 
+                        className='heartIcon'
+                    />
                     <p>{price}</p>
                 </div>
             </div>

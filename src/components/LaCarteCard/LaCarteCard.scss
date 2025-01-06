@@ -11,7 +11,7 @@
     max-width: 600px;
 }
 
-.laCarteCard img {
+.laCarteCardImage {
     width: 150px;
     height: auto;
     border-radius: 10px;
@@ -52,4 +52,9 @@
     font-size: $tertiary-font-size;
     font-family: $secondary-font;
     margin: 0;
+}
+
+.heartIcon {
+    cursor: pointer;
+    transition: fill 0.3s;
 }
