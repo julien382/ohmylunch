@@ -46,13 +46,14 @@
 
 .historyCardImages {
     display: flex;
-    flex-direction: column; // Changer pour colonne
+    flex-direction: column; // Par défaut, les images sont en colonne
     background-color: $primary-white-color;
     padding: 0.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     width: 100%;
-    gap: 0.5rem;
+    gap: 0.5rem; // Ecart entre les images en colonne
+    overflow: hidden; // Empêcher le dépassement des images
 }
 
 .historyCardImages img {
@@ -63,7 +64,7 @@
 
 .historyCard {
     display: flex;
-    flex-direction: column; // Changer pour colonne
+    flex-direction: column; // Par défaut, chaque carte est en colonne
     background-color: $primary-white-color;
     padding: 0.5rem;
     border-radius: 10px;
@@ -101,21 +102,8 @@
     text-align: left;
 }
 
-/* Media Queries pour les écrans de bureau (desktop) */
-@media (min-width: 1024px) {
-    .historyImage {
-        height: 400px; /* Réduire la hauteur de l'image pour les écrans de bureau */
-        object-fit: cover; /* Assure que l'image est toujours bien cadrée */
-    }
-
-    .history {
-        margin-top: -80px; /* Réduire légèrement le chevauchement pour les écrans de bureau */
-        padding: 2rem; /* Ajouter plus d'espace dans la div */
-    }
-}
-
 /* Media Queries pour les écrans très larges (large desktop) */
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
     .historyImage {
         height: 500px; /* Hauteur encore réduite pour les écrans très larges */
         object-fit: cover; /* Assure que l'image reste bien présentée */
@@ -128,7 +116,7 @@
 
     .historyCard {
         display: flex;
-        flex-direction: row; // Changer pour colonne
+        flex-direction: row; // Passer en ligne pour les grands écrans
         padding: 0.5rem;
         width: 100%; // Prendre toute la largeur de la page
     }
@@ -163,16 +151,21 @@
 
     .historyCardImages {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; // Changer en ligne pour les grands écrans
+        background-color: $primary-white-color;
         padding: 0.5rem;
         border-radius: 10px;
+        box-sizing: border-box; // Le padding fait partie de la taille totale du conteneur
         width: 100%;
-        gap: 0.5rem;
+        gap: 0.5rem; // Ajouter un petit écart entre les images
+        overflow: hidden; // Empêcher le débordement des images
     }
     
     .historyCardImages img {
-        width: 50%; // Ajuster la largeur de l'image
-        height: auto; // Conserver le ratio de l'image
+        width: calc(50% - 0.25rem); // Ajuster chaque image à 50% de la largeur disponible, moins la moitié du gap
+        height: auto; // Conserver le ratio d'aspect de l'image
+        object-fit: cover; // Assurer que l'image couvre l'espace sans déformation
         border-radius: 10px;
+        box-sizing: border-box; // Assurer que l'image respecte les dimensions du conteneur
     }
 }
