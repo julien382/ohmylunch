@@ -21,7 +21,6 @@ const Cart = () => {
 
   // Log du panier dans le localStorage pour déboguer
   useEffect(() => {
-    console.log('Panier:', panier);  // Log du panier actuel
     localStorage.setItem('panier', JSON.stringify(panier));  // Sauvegarder le panier dans localStorage
   }, [panier]);
 
