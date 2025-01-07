@@ -1,6 +1,18 @@
 @use '../../styles/index' as *;
 
+.historyContainer {
+    position: relative; // Position relative pour que les enfants puissent être positionnés
+}
+
+.historyImage {
+    width: 100%; // L'image prend toute la largeur
+    height: auto; // Conserve le ratio
+    display: block; // Évite les espaces blancs autour de l'image
+}
+
 .history {
+    position: relative; // Position normale pour gérer le chevauchement
+    z-index: 2; // Assure que cette div est au-dessus de l'image
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -8,6 +20,7 @@
     color: $primary-black-color;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    margin-top: -50px; // Chevauchement de l'image
 }
 
 .historyTitle {
@@ -86,4 +99,30 @@
     font-size: $quaternary-font-size;
     margin-bottom: 0.5rem;
     text-align: left;
+}
+
+/* Media Queries pour les écrans plus grands */
+@media (min-width: 1024px) {
+    .historyImage {
+        height: 600px; // Ajuster la hauteur de l'image pour les écrans larges
+        object-fit: cover; // Coupe l'image pour qu'elle reste esthétique
+    }
+
+    .history {
+        margin-top: -100px; // Augmenter le chevauchement pour les écrans plus grands
+        padding: 3rem; // Ajouter plus d'espace dans la div
+    }
+}
+
+/* Media Queries pour les écrans très larges */
+@media (min-width: 1440px) {
+    .historyImage {
+        height: 800px; // Taille plus grande pour les écrans très larges
+        object-fit: cover; // Assure une belle présentation
+    }
+
+    .history {
+        margin-top: -150px; // Ajuster le chevauchement pour des proportions harmonieuses
+        padding: 4rem; // Ajouter encore plus de confort visuel
+    }
 }
