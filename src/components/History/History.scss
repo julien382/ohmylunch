@@ -101,28 +101,78 @@
     text-align: left;
 }
 
-/* Media Queries pour les écrans plus grands */
+/* Media Queries pour les écrans de bureau (desktop) */
 @media (min-width: 1024px) {
     .historyImage {
-        height: 600px; // Ajuster la hauteur de l'image pour les écrans larges
-        object-fit: cover; // Coupe l'image pour qu'elle reste esthétique
+        height: 400px; /* Réduire la hauteur de l'image pour les écrans de bureau */
+        object-fit: cover; /* Assure que l'image est toujours bien cadrée */
     }
 
     .history {
-        margin-top: -100px; // Augmenter le chevauchement pour les écrans plus grands
-        padding: 3rem; // Ajouter plus d'espace dans la div
+        margin-top: -80px; /* Réduire légèrement le chevauchement pour les écrans de bureau */
+        padding: 2rem; /* Ajouter plus d'espace dans la div */
     }
 }
 
-/* Media Queries pour les écrans très larges */
+/* Media Queries pour les écrans très larges (large desktop) */
 @media (min-width: 1440px) {
     .historyImage {
-        height: 800px; // Taille plus grande pour les écrans très larges
-        object-fit: cover; // Assure une belle présentation
+        height: 500px; /* Hauteur encore réduite pour les écrans très larges */
+        object-fit: cover; /* Assure que l'image reste bien présentée */
     }
 
     .history {
-        margin-top: -150px; // Ajuster le chevauchement pour des proportions harmonieuses
-        padding: 4rem; // Ajouter encore plus de confort visuel
+        margin-top: -200px; /* Ajuste le chevauchement pour des proportions plus harmonieuses */
+        padding: 2rem; /* Ajoute plus de confort visuel */
+    }
+
+    .historyCard {
+        display: flex;
+        flex-direction: row; // Changer pour colonne
+        padding: 0.5rem;
+        width: 100%; // Prendre toute la largeur de la page
+    }
+    
+    .historyCard img {
+        width: 50%; // Ajuster la largeur de l'image
+        height: auto; // Conserver le ratio de l'image
+        border-radius: 10px;
+    }
+    
+    .historyCardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem;
+        font-size: $tertiary-font-size;
+        margin-top: 0rem;
+        text-align: left;
+    }
+
+    .historyCardContent2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem;
+        font-size: $tertiary-font-size;
+        margin-bottom: 0rem;
+        text-align: right;
+    }
+
+    .historyCardImages {
+        display: flex;
+        flex-direction: row;
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    
+    .historyCardImages img {
+        width: 50%; // Ajuster la largeur de l'image
+        height: auto; // Conserver le ratio de l'image
+        border-radius: 10px;
     }
 }
