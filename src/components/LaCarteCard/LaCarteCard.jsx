@@ -1,8 +1,6 @@
 import './LaCarteCard.scss';
 import PropTypes from 'prop-types';
 
-import imageDirect1 from '../../assets/img/plat1.jpg';
-
 const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) => {
     const toggleFavorite = (e) => {
         e.stopPropagation(); // Empêcher la propagation du clic
@@ -12,7 +10,7 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) 
 
     return (
         <div className='laCarteCard'>
-            <img src={imageDirect1} alt={title} className='laCarteCardImage' />
+            <img src={img} alt={title} className='laCarteCardImage' /> {/* Utilisation de la prop img ici */}
             <div className='laCarteCardContent'>
                 <div className='laCarteCardText'>
                     <h4>{title}</h4>
@@ -39,7 +37,7 @@ const LaCarteCard = ({ img, title, text, price, onToggleFavorite, isFavorite }) 
 };
 
 LaCarteCard.propTypes = {
-    img: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired, // La prop img est maintenant obligatoire
     title: PropTypes.string.isRequired,
     text: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

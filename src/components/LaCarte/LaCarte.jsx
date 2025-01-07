@@ -38,12 +38,12 @@ const LaCarte = () => {
             return (
               <LaCarteCard
                 key={index}
-                img={card.img}  // Utiliser le chemin relatif de l'image
+                img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
                 title={card.title}
                 text={card.text}
                 price={card.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
+                onToggleFavorite={togglePanier}
               />
             );
           })}
@@ -60,12 +60,12 @@ const LaCarte = () => {
             return (
               <LaCarteCard
                 key={index}
-                img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
+                img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
                 title={card.title}
                 text={card.text}
                 price={card.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
+                onToggleFavorite={togglePanier}
               />
             );
           })}
@@ -82,12 +82,12 @@ const LaCarte = () => {
             return (
               <LaCarteCard
                 key={index}
-                img={`/assets/img/${card.img}.jpg`}  // Utiliser le chemin relatif de l'image
+                img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
                 title={card.title}
                 text={card.text}
                 price={card.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
+                onToggleFavorite={togglePanier}
               />
             );
           })}
