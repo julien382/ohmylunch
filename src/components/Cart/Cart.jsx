@@ -6,18 +6,11 @@ import { useState, useEffect } from 'react';
 
 const Cart = () => {
   const location = useLocation();
-  const [panier, setPanier] = useState(location.state?.panier || JSON.parse(localStorage.getItem('panier')) || []);
+  const [panier, setPanier] = useState(location.state?.panier || JSON.parse(localStorage.getItem('panier')) || { entrees: [], plats: [], desserts: [] });
 
-  // Fonction pour ajouter ou supprimer un élément du panier
-  const togglePanier = (card) => {
-    setPanier((prevPanier) => {
-      const itemIndex = prevPanier.findIndex(item => item.title === card.title);
-      if (itemIndex === -1) {
-        return [...prevPanier, card];  // Ajouter l'élément si pas déjà dans le panier
-      } else {
-        return prevPanier.filter(item => item.title !== card.title);  // Supprimer l'élément du panier
-      }
-    });
+  // Fonction pour trier les éléments de chaque catégorie par ID
+  const sortItemsById = (categoryItems) => {
+    return categoryItems.sort((a, b) => a.id - b.id);  // Tri par ID croissant
   };
 
   // Log du panier dans le localStorage pour déboguer
@@ -33,30 +26,70 @@ const Cart = () => {
       <div className='cart'>
         <h2 className='cartTitle'>Panier</h2>
 
-        {panier.length === 0 ? (
+        {panier.entrees.length === 0 && panier.plats.length === 0 && panier.desserts.length === 0 ? (
           <p>Votre panier est vide.</p>
         ) : (
           <div className='laCarteCards'>
-            {/* Afficher les plats ajoutés au panier */}
-            {panier.map((item, index) => (
-              <LaCarteCard
-                key={index}
-                img={item.img}
-                title={item.title}
-                text={item.text}
-                price={item.price}
-                isFavorite={true}  // Toujours en favori dans le panier
-                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
-              />
-            ))}
+            {/* Afficher les entrées */}
+            {panier.entrees.length > 0 && (
+              <div className='cartSection'>
+                <h3>Entrées</h3>
+                {sortItemsById(panier.entrees).map((item) => (
+                  <LaCarteCard
+                    key={item.id}
+                    img={`ohmylunch/assets/img/${item.img}.jpg`}  // Toujours ajouter .jpg
+                    title={item.title}
+                    text={item.text}
+                    price={item.price}
+                    isFavorite={true}  // Toujours en favori dans le panier
+                    onToggleFavorite={() => {}}  // Fonction vide, on n'a pas besoin de changer l'état dans le panier
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Afficher les plats */}
+            {panier.plats.length > 0 && (
+              <div className='cartSection'>
+                <h3>Plats</h3>
+                {sortItemsById(panier.plats).map((item) => (
+                  <LaCarteCard
+                    key={item.id}
+                    img={`ohmylunch/assets/img/${item.img}.jpg`}  // Toujours ajouter .jpg
+                    title={item.title}
+                    text={item.text}
+                    price={item.price}
+                    isFavorite={true}  // Toujours en favori dans le panier
+                    onToggleFavorite={() => {}}  // Fonction vide
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Afficher les desserts */}
+            {panier.desserts.length > 0 && (
+              <div className='cartSection'>
+                <h3>Desserts</h3>
+                {sortItemsById(panier.desserts).map((item) => (
+                  <LaCarteCard
+                    key={item.id}
+                    img={`ohmylunch/assets/img/${item.img}.jpg`}  // Toujours ajouter .jpg
+                    title={item.title}
+                    text={item.text}
+                    price={item.price}
+                    isFavorite={true}  // Toujours en favori dans le panier
+                    onToggleFavorite={() => {}}  // Fonction vide
+                  />
+                ))}
+              </div>
+            )}
+
             <p className='serverReminder'>Présentez cette liste au serveur pour finaliser votre commande.</p>
           </div>
         )}
-
       </div>
     </div>
   );
 };
-
 
 export default Cart;

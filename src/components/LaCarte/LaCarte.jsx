@@ -5,16 +5,23 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const LaCarte = () => {
-  const [panier, setPanier] = useState([]);  // Stocke les éléments du panier
+  const [panier, setPanier] = useState({ entrees: [], plats: [], desserts: [] });  // Stocke les éléments du panier par catégorie
 
   // Fonction pour ajouter ou supprimer un élément du panier
-  const togglePanier = (card) => {
+  const togglePanier = (card, category) => {
     setPanier((prevPanier) => {
-      const itemIndex = prevPanier.findIndex(item => item.title === card.title);
-      if (itemIndex === -1) {
-        return [...prevPanier, card];  // Ajouter l'élément si pas déjà dans le panier
+      const isItemInCategory = prevPanier[category].some(item => item.id === card.id);
+
+      if (!isItemInCategory) {
+        return {
+          ...prevPanier,
+          [category]: [...prevPanier[category], card],  // Ajouter l'élément à la catégorie appropriée
+        };
       } else {
-        return prevPanier.filter(item => item.title !== card.title);  // Supprimer l'élément du panier
+        return {
+          ...prevPanier,
+          [category]: prevPanier[category].filter(item => item.id !== card.id),  // Supprimer l'élément de la catégorie
+        };
       }
     });
   };
@@ -34,16 +41,17 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.entrees.map((card, index) => {
-            const isFavorite = panier.some(item => item.title === card.title);
+            const cardWithCategory = { ...card, id: index + 1 };  // Utiliser un ID simple (1, 2, 3,...)
+            const isFavorite = panier.entrees.some(item => item.id === cardWithCategory.id);
             return (
               <LaCarteCard
-                key={index}
+                key={cardWithCategory.id}
                 img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
-                title={card.title}
-                text={card.text}
-                price={card.price}
+                title={cardWithCategory.title}
+                text={cardWithCategory.text}
+                price={cardWithCategory.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}
+                onToggleFavorite={() => togglePanier(cardWithCategory, 'entrees')}
               />
             );
           })}
@@ -56,16 +64,17 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.plats.map((card, index) => {
-            const isFavorite = panier.some(item => item.title === card.title);
+            const cardWithCategory = { ...card, id: index + 1 };  // Utiliser un ID simple (1, 2, 3,...)
+            const isFavorite = panier.plats.some(item => item.id === cardWithCategory.id);
             return (
               <LaCarteCard
-                key={index}
+                key={cardWithCategory.id}
                 img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
-                title={card.title}
-                text={card.text}
-                price={card.price}
+                title={cardWithCategory.title}
+                text={cardWithCategory.text}
+                price={cardWithCategory.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}
+                onToggleFavorite={() => togglePanier(cardWithCategory, 'plats')}
               />
             );
           })}
@@ -78,16 +87,17 @@ const LaCarte = () => {
         <span className='laCarteTypePlatsBarre'></span>
         <div className='laCarteCards'>
           {data.desserts.map((card, index) => {
-            const isFavorite = panier.some(item => item.title === card.title);
+            const cardWithCategory = { ...card, id: index + 1 };  // Utiliser un ID simple (1, 2, 3,...)
+            const isFavorite = panier.desserts.some(item => item.id === cardWithCategory.id);
             return (
               <LaCarteCard
-                key={index}
+                key={cardWithCategory.id}
                 img={`ohmylunch/assets/img/${card.img}.jpg`}  // Toujours ajouter .jpg
-                title={card.title}
-                text={card.text}
-                price={card.price}
+                title={cardWithCategory.title}
+                text={cardWithCategory.text}
+                price={cardWithCategory.price}
                 isFavorite={isFavorite}
-                onToggleFavorite={togglePanier}
+                onToggleFavorite={() => togglePanier(cardWithCategory, 'desserts')}
               />
             );
           })}
