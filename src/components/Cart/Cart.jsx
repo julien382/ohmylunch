@@ -1,4 +1,5 @@
 import './Cart.scss';
+import serveurClient from '../../assets/img/serveurClient.jpg';
 import { useLocation } from 'react-router-dom';
 import LaCarteCard from '../LaCarteCard/LaCarteCard';
 import { useState, useEffect } from 'react';
@@ -24,38 +25,38 @@ const Cart = () => {
     localStorage.setItem('panier', JSON.stringify(panier));  // Sauvegarder le panier dans localStorage
   }, [panier]);
 
-  if (panier.length === 0) {
-    return (
+  return (
+    <div className='cartContainer'>
+      {/* Toujours afficher l'image */}
+      <img src={serveurClient} alt='serveurClient' className='cartImage' />
+      
       <div className='cart'>
         <h2 className='cartTitle'>Panier</h2>
-        <p>Votre panier est vide.</p>
+
+        {panier.length === 0 ? (
+          <p>Votre panier est vide.</p>
+        ) : (
+          <div className='laCarteCards'>
+            {/* Afficher les plats ajoutés au panier */}
+            {panier.map((item, index) => (
+              <LaCarteCard
+                key={index}
+                img={item.img}
+                title={item.title}
+                text={item.text}
+                price={item.price}
+                isFavorite={true}  // Toujours en favori dans le panier
+                onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
+              />
+            ))}
+            <p className='serverReminder'>Présentez cette liste au serveur pour finaliser votre commande.</p>
+          </div>
+        )}
+
       </div>
-    );
-  }
-
-  return (
-    <div className='cart'>
-      <h2 className='cartTitle'>Panier</h2>
-
-      {/* Afficher les plats ajoutés au panier */}
-      <div className='laCarteCards'>
-        {panier.map((item, index) => (
-          <LaCarteCard
-            key={index}
-            img={item.img}
-            title={item.title}
-            text={item.text}
-            price={item.price}
-            isFavorite={true}  // Toujours en favori dans le panier
-            onToggleFavorite={togglePanier}  // Passer la fonction pour ajouter ou supprimer du panier
-          />
-        ))}
-      </div>
-
-      {/* Ajouter le message en bas */}
-      <p className='serverReminder'>Présentez cette liste au serveur pour finaliser votre commande.</p>
     </div>
   );
 };
+
 
 export default Cart;
