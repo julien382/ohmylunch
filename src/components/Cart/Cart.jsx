@@ -51,6 +51,9 @@ const Cart = () => {
           />
         ))}
       </div>
+
+      {/* Ajouter le message en bas */}
+      <p className='serverReminder'>Présentez cette liste au serveur pour finaliser votre commande.</p>
     </div>
   );
 };
