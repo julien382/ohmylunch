@@ -26,6 +26,14 @@ const Cart = () => {
       }
     });
   };
+
+  // Trier les éléments du panier par ID
+  const sortedPanier = {
+    entrees: [...panier.entrees].sort((a, b) => a.id - b.id),
+    plats: [...panier.plats].sort((a, b) => a.id - b.id),
+    desserts: [...panier.desserts].sort((a, b) => a.id - b.id),
+  };
+
   console.log(localStorage);
   
   // Log du panier dans le localStorage pour déboguer
@@ -40,17 +48,17 @@ const Cart = () => {
       <div className='cart'>
         <h2 className='cartTitle'>Panier</h2>
 
-        {panier.entrees.length === 0 && panier.plats.length === 0 && panier.desserts.length === 0 ? (
+        {sortedPanier.entrees.length === 0 && sortedPanier.plats.length === 0 && sortedPanier.desserts.length === 0 ? (
           <p>Votre panier est vide.</p>
         ) : (
           <>
             {/* Section Entrées */}
-            {panier.entrees.length > 0 && (
+            {sortedPanier.entrees.length > 0 && (
               <div className='panierSection'>
                 <h3 className='sectionTitle'>ENTREES</h3>
                 <div className='sectionTitleBar'></div>  {/* Barre sous le titre */}
                 <div className='laCarteCards'>
-                  {panier.entrees.map((item) => (
+                  {sortedPanier.entrees.map((item) => (
                     <LaCarteCard
                       key={item.id}
                       img={`ohmylunch/assets/img/${item.img}.jpg`}
@@ -66,12 +74,12 @@ const Cart = () => {
             )}
 
             {/* Section Plats */}
-            {panier.plats.length > 0 && (
+            {sortedPanier.plats.length > 0 && (
               <div className='panierSection'>
                 <h3 className='sectionTitle'>PLATS</h3>
                 <div className='sectionTitleBar'></div>  {/* Barre sous le titre */}
                 <div className='laCarteCards'>
-                  {panier.plats.map((item) => (
+                  {sortedPanier.plats.map((item) => (
                     <LaCarteCard
                       key={item.id}
                       img={`ohmylunch/assets/img/${item.img}.jpg`}
@@ -87,12 +95,12 @@ const Cart = () => {
             )}
 
             {/* Section Desserts */}
-            {panier.desserts.length > 0 && (
+            {sortedPanier.desserts.length > 0 && (
               <div className='panierSection'>
                 <h3 className='sectionTitle'>DESSERTS</h3>
                 <div className='sectionTitleBar'></div>  {/* Barre sous le titre */}
                 <div className='laCarteCards'>
-                  {panier.desserts.map((item) => (
+                  {sortedPanier.desserts.map((item) => (
                     <LaCarteCard
                       key={item.id}
                       img={`ohmylunch/assets/img/${item.img}.jpg`}
