@@ -7,6 +7,7 @@ header {
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: relative; // Permettre le positionnement absolu de l'icône
+    background-color: $primary-white-color;
 }
 
 .arrowLeft {

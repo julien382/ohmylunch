@@ -1,35 +1,3 @@
-:root {
-  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: white;
-  background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-width: 320px; // Ajuster la largeur minimale pour mobile
-  min-height: 100vh;
-  overflow-x: hidden; // Empêcher le dépassement horizontal
-}
-
-main {
-  margin: 0;
-  width: 100%; // Assurer que le contenu prend toute la largeur
-
-  @media (min-width: 768px) {
-    margin: 0 auto;
-    max-width: 1000px;
-  }
-}
-
 $primary-white-color: #ffffff;
 $secondary-white-color: #f5f5f5;
 $tertiary-white-color: #e4e4e4;
@@ -48,6 +16,43 @@ $error-font-size: 50px;
 $primary-font-weight: bold;
 
 $secondary-font: 'Shrikhand', serif;
+
+:root {
+  font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: white;
+  background-color: $secondary-black-color;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app{
+  background-color: $primary-white-color;
+
+}
+body {
+  margin: 0;
+  min-width: 320px; // Ajuster la largeur minimale pour mobile
+  min-height: 100vh;
+  overflow-x: hidden; // Empêcher le dépassement horizontal
+}
+
+main {
+  margin: 0;
+  width: 100%; // Assurer que le contenu prend toute la largeur
+  
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+}
 
 @keyframes expandBar {
   0% {
